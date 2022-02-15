@@ -165,8 +165,9 @@ img {
 nav {
   z-index: 99;
   position: fixed;
-  width: 100%;
+  width: 100vw;
   background-color: var(--clr-darkest);
+  overflow-x: hidden;
 }
 
 .nav-container {
@@ -451,14 +452,14 @@ nav {
   box-shadow: inset -5px -5px 2px var(--clr-light-tint);
 }
 
+.about-me-btn {
+  margin-inline: 0.1em;
+}
+
 @media (min-width: 800px) {
   .about-me-info {
     flex-direction: row-reverse;
     padding-inline: 7em;
-  }
-
-  .about-me-btn {
-    margin-inline: 0.1em;
   }
 }
 /*======= End of About Me ======*/
