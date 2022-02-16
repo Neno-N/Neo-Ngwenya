@@ -426,57 +426,6 @@ nav {
   border-radius: 10px;
 }
 
-.hero-animation {
-  position: absolute;
-  top: 56;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
-
-.bubble-animation {
-  position: relative;
-  width: 100%;
-  aspect-ratio: 1/1;
-}
-
-.bounce {
-  width: 10%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background-image: var(--radial-gradient);
-  position: absolute;
-  top: calc(var(--x) * 5vh);
-  left: calc(var(--x) * 10vw);
-  transform: scale(0);
-  animation: bounce 7s linear infinite alternate;
-  animation-delay: calc((var(--x) - 1) * 1s);
-}
-
-.bounce2 {
-  width: 7%;
-  aspect-ratio: 1/1;
-  border-radius: 50%;
-  background-image: var(--radial-gradient);
-  position: absolute;
-  top: calc(var(--x) * 5vh);
-  left: calc(var(--x) * 10vw);
-  transform: scale(0);
-  animation: bounce 7s linear infinite alternate;
-  animation-delay: calc((var(--x) - 1) * 1s);
-}
-
-@keyframes bounce {
-  0% {
-    transform: translate(-80%, -30%) scale(1);
-  }
-  50% {
-    transform: translate(-250%, 100%);
-  }
-  100% {
-    transform: translate(170%, -50%);
-  }
-}
 /*======= End of Hero =======*/
 
 /*======= About Me ======*/
