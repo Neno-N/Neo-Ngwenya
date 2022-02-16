@@ -70,6 +70,9 @@ const navBar = document.querySelector('.nav-bar');
 const menuBtn = document.querySelector('.toggle-btn');
 const navLink = document.querySelectorAll('.nav-link');
 
+const modeBtn = document.querySelector('.mode-btn');
+const body = document.querySelector('body');
+
 const allProjects = document.querySelectorAll('.project-card')
 const jsBtn = document.querySelector('.javascript');
 const htmlBtn = document.querySelector('.html');
@@ -97,6 +100,12 @@ navLink.forEach(link => {
     link.addEventListener('click', () => {
         navBar.classList.remove('show-nav-bar')
     })
+});
+
+//Light/Dark Mode
+modeBtn.addEventListener('click', ()=>{
+    modeBtn.classList.toggle('light-visible');
+    body.classList.toggle('light');
 });
 
 //Project Selection

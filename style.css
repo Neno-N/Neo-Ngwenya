@@ -6,13 +6,14 @@
   --clr-light-transparent: #986bd8a1;
   --clr-dark: #22044c;
   --clr-darkest: #080113;
-  --clr-darkest-transparent: #0801139f;
+  --clr-darkest-transparent: #080113c5;
   --clr-dark-tint: #440798;
   --clr-acc-orange: #be5509;
   --clr-acc-green: #09be55;
   --clr-comp-green: #72be09;
   --clr-comp-pink: #be094e;
   --clr-white: #dad6d6;
+  --clr-white-transparent: #dad6d6b4;
 
   --transition-ease: all 0.3s ease;
   --transition-linear: all 0.3s linear;
@@ -38,13 +39,20 @@
   );
 }
 
-/* .light:root {
+.light {
   --clr-light-tint: #5509be;
+  --clr-light-transparent: #5409be83;
   --clr-darkest: #dad6d6;
-  --clr-main: #5509be;
-  --clr-light-transparent: #5409beb0;
-  --clr-darkest-transparent: #dad6d6d3;
-} */
+  --clr-darkest-transparent: #dad6d6d8;
+  --clr-main: #996bd8;
+  --clr-main-transparent: #986bd8b9;
+  --linear-gradient: linear-gradient(
+    90deg,
+    var(--clr-main),
+    60%,
+    var(--clr-comp-pink)
+  );
+}
 
 /*======= Global Styles =======*/
 ::-webkit-scrollbar {
@@ -291,6 +299,48 @@ nav {
   position: relative;
 }
 
+.modes {
+  position: absolute;
+  top: 12%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mode-btn {
+  margin: 0;
+  background-color: #be094e;
+  position: absolute;
+  top: 0.4em;
+  left: 0.3em;
+  transition: var(--transition-linear);
+}
+
+.light-visible {
+  transform: translateX(2em);
+}
+
+.mode-btn:hover {
+  box-shadow: 0px 0px 10px var(--clr-main);
+}
+
+.modes-btns {
+  display: flex;
+  flex-direction: row;
+  font-size: 1.5em;
+  background-color: var(--clr-light-tint);
+  color: var(--clr-darkest);
+  padding: 0.3em;
+  border-radius: 50px;
+  position: relative;
+}
+
+.mode-p {
+  font-size: smaller;
+}
+
 .socials-bar {
   position: absolute;
   bottom: 1em;
@@ -336,50 +386,6 @@ nav {
   color: var(--clr-light-tint);
 }
 
-.modes {
-  position: absolute;
-  right: 43%;
-  top: 12%;
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-@media (max-width: 900px) {
-  .modes {
-    right: 35%;
-  }
-}
-
-.mode-p {
-  font-size: smaller;
-}
-
-.mode-btn {
-  outline: none;
-  background-color: transparent;
-  border: 2px solid var(--clr-light-tint);
-  font-size: 2em;
-  color: var(--clr-light-tint);
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 0.2em;
-  transition: var(--transition-linear);
-}
-
-.dark-mode {
-  display: none;
-}
-
-.mode-btn:hover {
-  transform: scale(1.2);
-  box-shadow: 0px 0px 15px var(--clr-light-tint);
-}
-
 .hero {
   max-width: 500px;
   padding: 2.5em;
@@ -387,13 +393,20 @@ nav {
   box-shadow: inset 5px 5px 2px var(--clr-light-tint);
 }
 
-@media (max-width: 375px) {
+@media (max-width: 650px) {
   .hero {
-    width: 350px;
+    width: 90%;
   }
 
   .title {
-    font-size: 1.5em;
+    font-size: medium;
+  }
+}
+
+@media (max-width: 480px) {
+  .image-font {
+    font-size: small;
+    width: fit-content;
   }
 }
 
@@ -609,7 +622,7 @@ nav {
 
 .project-card {
   background: url(img/pexels-ola-dapo-3521937.jpg) center/cover no-repeat;
-  background-color: var(--clr-darkest-transparent);
+  background-color: var(--clr-main-transparent);
   background-blend-mode: multiply;
   padding-block: 3em;
   padding-inline: 1em;
@@ -640,6 +653,7 @@ nav {
   font-size: medium;
   position: relative;
   z-index: 1;
+  color: var(--clr-white);
 }
 
 .project-name::after {
@@ -654,6 +668,10 @@ nav {
   transition: var(--transition-ease);
   transform: scaleX(0.06);
   transform-origin: left;
+}
+
+.skills-used {
+  color: var(--clr-dark);
 }
 
 .project-body {
@@ -671,13 +689,17 @@ nav {
   left: 3%;
   width: 100%;
   height: 100%;
-  background-color: var(--clr-darkest-transparent);
+  background-color: var(--clr-white-transparent);
   z-index: -1;
   border-radius: 0px 0px 10px 10px;
   transform: scaleY(0);
   transform-origin: top;
   transition: var(--transition-ease);
   transition-delay: 0.3s;
+}
+
+.project-view-description {
+  font-weight: bold;
 }
 
 .project-view-page {
