@@ -37,9 +37,9 @@ const projects = [
     },
     {
         id: '6',
-        title: 'Survery Form',
+        title: 'Survey Form',
         src: './vids/Form (edited).mp4',
-        description: 'This is a generic, simple and responsive form. Websit Is not published',
+        description: 'This is a generic, simple and responsive form. Website Is not published',
         href: '#'
     },
     {
