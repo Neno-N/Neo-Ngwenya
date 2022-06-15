@@ -516,7 +516,9 @@ nav {
 
 .skill-icon {
   font-size: 2em;
+  color: var(--clr-darkest);
 }
+
 /*======= End of Skills =======*/
 
 /*======= Projects =======*/
